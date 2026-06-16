@@ -30,10 +30,16 @@
                     <p class="subtitle">Track updates, features, and fixes in Google Cloud BigQuery</p>
                 </div>
             </div>
-            <button id="btn-refresh" class="btn btn-primary btn-refresh" aria-label="Refresh updates">
-                <i id="refresh-icon" class="fa-solid fa-rotate"></i>
-                <span>Refresh Feed</span>
-            </button>
+            <div class="header-actions">
+                <button id="btn-export-csv" class="btn btn-secondary" style="display: none;" aria-label="Export to CSV">
+                    <i class="fa-solid fa-file-csv"></i>
+                    <span>Export CSV</span>
+                </button>
+                <button id="btn-refresh" class="btn btn-primary btn-refresh" aria-label="Refresh updates">
+                    <i id="refresh-icon" class="fa-solid fa-rotate"></i>
+                    <span>Refresh Feed</span>
+                </button>
+            </div>
         </header>
 
         <!-- Stats Counter -->

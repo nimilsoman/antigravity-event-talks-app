@@ -120,6 +120,12 @@ body {
     gap: 1.5rem;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 .header-logo {
     display: flex;
     align-items: center;
@@ -803,7 +809,13 @@ body {
         align-items: flex-start;
     }
     
-    .btn-refresh {
+    .header-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .header-actions .btn {
         width: 100%;
     }
     
