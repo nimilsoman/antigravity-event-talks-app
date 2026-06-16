@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
     const btnRefresh = document.getElementById('btn-refresh');
     const btnExportCsv = document.getElementById('btn-export-csv');
+    const btnThemeToggle = document.getElementById('btn-theme-toggle');
+    const themeToggleIcon = document.getElementById('theme-toggle-icon');
     const refreshIcon = document.getElementById('refresh-icon');
     const btnRetry = document.getElementById('btn-retry');
     const searchInput = document.getElementById('search-input');
@@ -46,6 +48,27 @@ document.addEventListener('DOMContentLoaded', () => {
         'Announcement': { color: '#a855f7', rgb: '168, 85, 247', border: 'rgba(168, 85, 247, 0.4)' },
         'Update': { color: '#94a3b8', rgb: '148, 163, 184', border: 'rgba(148, 163, 184, 0.4)' }
     };
+
+    // Theme Switcher Logic
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-theme');
+        themeToggleIcon.className = 'fa-regular fa-moon';
+    } else {
+        themeToggleIcon.className = 'fa-regular fa-sun';
+    }
+
+    btnThemeToggle.addEventListener('click', () => {
+        if (document.body.classList.contains('light-theme')) {
+            document.body.classList.remove('light-theme');
+            themeToggleIcon.className = 'fa-regular fa-sun';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.add('light-theme');
+            themeToggleIcon.className = 'fa-regular fa-moon';
+            localStorage.setItem('theme', 'light');
+        }
+    });
 
     // Initialize Page
     fetchReleaseNotes();
